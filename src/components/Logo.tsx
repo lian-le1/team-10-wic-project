@@ -4,7 +4,14 @@ import { cn } from '../lib/cn'
 import Icon from './ui/Icon'
 
 /** The CareCapsule mark and two-color wordmark, linking home. */
-export default function Logo({ size = 'md' }: { size?: 'sm' | 'md' }) {
+export default function Logo({
+  size = 'md',
+  onMint = false,
+}: {
+  size?: 'sm' | 'md'
+  /** Use a deeper badge so the mark stays visible on a mint-100 background */
+  onMint?: boolean
+}) {
   return (
     <Link
       to="/"
@@ -13,7 +20,8 @@ export default function Logo({ size = 'md' }: { size?: 'sm' | 'md' }) {
     >
       <span
         className={cn(
-          'flex shrink-0 items-center justify-center bg-mint-100',
+          'flex shrink-0 items-center justify-center',
+          onMint ? 'bg-primary/25' : 'bg-mint-100',
           size === 'md' ? 'size-9 rounded-brand' : 'size-8.5 rounded-brand-sm',
         )}
       >
