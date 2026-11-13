@@ -12,8 +12,11 @@ CareCapsule is a family caregiving app that helps families coordinate medication
 ## Project structure
 
 - `src/pages/` — page-level components, one per route
-- `src/components/` — reusable components (e.g. `Layout.tsx`, the shared header/footer shell)
-- `src/App.tsx` — route definitions
+- `src/components/` — app-level shared components (`Layout.tsx`, `SiteHeader.tsx`, `SiteFooter.tsx`, `Logo.tsx`)
+- `src/components/ui/` — reusable building blocks: `Button`/`ButtonLink`, `Card`, `Chip`, `Avatar`, `IconBadge`, `Icon`, `Container`, `SectionHeading`, `Accordion`
+- `src/assets/` — icons and images exported from Figma
+- `src/index.css` — design tokens in the Tailwind `@theme` block (colors, Nunito font, type scale, spacing, radius, shadows), taken from the Figma Welcome frame. Use these utilities (`bg-primary`, `text-ink`, `rounded-card`, `text-headline`, …) instead of hard-coded values
+- `src/App.tsx` — route definitions (`/` is `WelcomePage`)
 - `public/` — static assets served as-is
 - `reference/original-index.html` — a teammate's earlier static HTML version, kept for reference only; it is not part of the build
 
