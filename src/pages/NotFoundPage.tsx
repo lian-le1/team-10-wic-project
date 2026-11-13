@@ -1,12 +1,12 @@
-import { Link } from 'react-router'
+import { ButtonLink } from '../components/ui/Button'
+import Container from '../components/ui/Container'
 
 export default function NotFoundPage() {
   return (
-    <section className="space-y-4">
-      <h1 className="text-2xl font-bold">Page not found</h1>
-      <Link to="/" className="text-teal-700 underline">
-        Back to home
-      </Link>
-    </section>
+    <Container className="flex flex-col items-start gap-6 py-section lg:px-gutter">
+      <h1 className="text-headline-sm font-extrabold text-ink">Page not found</h1>
+      <p className="text-body-lg text-ink-muted">We couldn't find the page you were looking for.</p>
+      <ButtonLink href="/">Back to home</ButtonLink>
+    </Container>
   )
 }

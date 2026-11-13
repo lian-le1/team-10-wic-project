@@ -1,1 +1,97 @@
 @import "tailwindcss";
+
+/*
+ * CareCapsule design tokens, taken from the Figma "CareCapsule · Welcome" frame.
+ * Every screen should use these utilities (bg-primary, text-ink, rounded-card,
+ * text-headline, shadow-card, …) instead of hard-coded values.
+ */
+@theme {
+  /* Fonts: Nunito is loaded in index.html */
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+
+  /* Colors: greens */
+  --color-canvas: #f5faf7; /* page background */
+  --color-mint-50: #eaf8f4; /* tinted section, list rows */
+  --color-mint-100: #d4f0e8; /* chips, icon tiles */
+  --color-mint-200: #c5e8dc; /* stronger chips, dividers */
+  --color-primary: #3dbda0; /* buttons, links, most headings */
+  --color-primary-soft: #5bc8b0; /* gradient end */
+
+  /* Colors: text */
+  --color-ink: #1a3d35; /* strongest headings */
+  --color-ink-muted: #3a7a6a; /* supporting copy */
+  --color-ink-faint: #a8c8c2; /* fine print */
+  --color-cobalt: #2563eb; /* body copy and text links */
+
+  /* Colors: blues */
+  --color-cornflower-50: #eaf3fd;
+  --color-cornflower-300: #9abde5;
+  --color-cornflower-400: #69a1e4;
+  --color-cornflower-500: #6a9ed8;
+  --color-cornflower-700: #376a9f;
+  --color-mist-50: #f0f7fa;
+  --color-mist-100: #d8edf5;
+  --color-mist-500: #6ba5c0;
+
+  /* Colors: logo */
+  --color-brand-care: #69a1e4;
+  --color-brand-capsule: #62b9a8;
+
+  /* Type scale (size + default line height) */
+  --text-display: 64px;
+  --text-display--line-height: 1.07;
+  --text-headline-lg: 42px;
+  --text-headline-lg--line-height: normal;
+  --text-headline: 40px;
+  --text-headline--line-height: normal;
+  --text-headline-sm: 36px;
+  --text-headline-sm--line-height: 1.2;
+  --text-quote: 30px;
+  --text-quote--line-height: 1.5;
+  --text-title-lg: 26px;
+  --text-title-lg--line-height: normal;
+  --text-lead: 22px;
+  --text-lead--line-height: 1.45;
+  --text-title: 20px;
+  --text-title--line-height: normal;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 1.65;
+  --text-body: 15px;
+  --text-body--line-height: 1.75;
+  --text-label: 14px;
+  --text-label--line-height: normal;
+  --text-caption: 13px;
+  --text-caption--line-height: normal;
+  --text-eyebrow: 12px;
+  --text-eyebrow--line-height: normal;
+  --text-micro: 11px;
+  --text-micro--line-height: normal;
+
+  /* Spacing: the default 4px step matches Figma; plus named page spacing */
+  --spacing-gutter: 80px; /* desktop side padding for header, hero, footer */
+  --spacing-section: 80px; /* standard vertical padding of a section */
+
+  /* Corner radius */
+  --radius-brand-sm: 12px;
+  --radius-brand: 14px;
+  --radius-tile: 16px;
+  --radius-popover: 20px;
+  --radius-card: 28px;
+  --radius-media: 40px;
+
+  /* Shadows */
+  --shadow-float: 0 16px 40px 0 rgb(61 189 160 / 0.19);
+  --shadow-card: 0 16px 48px 0 rgb(61 189 160 / 0.09);
+}
+
+@layer base {
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
